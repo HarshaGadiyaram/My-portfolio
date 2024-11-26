@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js Internals</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <a href="/" class="logo">Portfolio >> Harsha</a>
+      <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/article1" class="active">Article</a>
+      </nav>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <section class="about article-content">
+      <h2>Node.js Internals: Not Everything Happens on the Thread Pool</h2>
+      <p>
+        Node.js is often recognized for its non-blocking and event-driven
+        architecture. But how does it manage to process various operations
+        efficiently on a single thread? Let's dive into its internals.
+      </p>
+    </section>
+
+    <!-- Section 2: The Event Loop -->
+    <section class="about article-content">
+      <h3>1. The Event Loop</h3>
+      <p>
+        At the heart of Node.js lies the <strong>Event Loop</strong>, a
+        mechanism responsible for handling asynchronous operations. The event
+        loop processes tasks like I/O operations, network requests, and timers
+        while ensuring JavaScript code runs in a single-threaded environment.
+      </p>
+    </section>
+
+    <!-- Section 3: Thread Pool -->
+    <section class="about article-content">
+      <h3>2. Thread Pool</h3>
+      <p>
+        For tasks requiring more time, like file system operations or
+        cryptographic computations, Node.js uses a
+        <strong>Thread Pool</strong> provided by <strong>libuv</strong>, a
+        library that Node.js relies on for platform-specific implementations.
+      </p>
+    </section>
+
+    <!-- Section 4: Direct OS-Level Operations -->
+    <section class="about article-content">
+      <h3>3. Direct OS-Level Operations</h3>
+      <p>
+        Not all tasks in Node.js go through the thread pool. Certain operations,
+        such as networking tasks (handled via OS kernel mechanisms), bypass the
+        thread pool altogether. This is why Node.js can efficiently manage
+        multiple simultaneous requests.
+      </p>
+    </section>
+
+    <!-- Section 5: Why This Matters -->
+    <section class="about article-content">
+      <h3>4. Why This Matters</h3>
+      <p>
+        Understanding Node.js internals helps developers write optimized code
+        and avoid common pitfalls, such as blocking the event loop with heavy
+        computations.
+      </p>
+    </section>
+
+    <!-- Section 6: Conclusion -->
+    <section class="about article-content">
+      <h3>Conclusion</h3>
+      <p>
+        Node.js is a powerful runtime that combines the speed of
+        <strong>V8</strong>, the efficiency of <strong>libuv</strong>, and the
+        simplicity of JavaScript. By understanding its architecture, you can
+        build scalable and performant applications Great that the scrolling is
+        working! To address the content layout issue, let’s ensure everything is
+        aligned properly. We'll add styles to center-align the content, manage
+        spacing, and organize elements neatly. Great that the scrolling is
+        working! To address the content layout issue, let’s ensure everything is
+        aligned properly. We'll add styles to center-align the content, manage
+        spacing, and organize elements neatly.
+      </p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2024 by Harsha Gadiyaram | All Rights Reserved</p>
+      </div>
+      <div class="footer-iconTop">
+        <a href="#top"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+  </body>
+</html>
